@@ -1,0 +1,218 @@
+// Fonts:
+@font-face
+	font-family: 'Open Sans'
+	font-style: normal
+	font-weight: 300
+	src: local('Open Sans Light'), local('OpenSans-Light'), url(http://fonts.gstatic.com/s/opensans/v13/DXI1ORHCpsQm3Vp6mXoaTegdm0LZdjqr5-oayXSOefg.woff2) format('woff2'), url(http://fonts.gstatic.com/s/opensans/v13/DXI1ORHCpsQm3Vp6mXoaTXhCUOGz7vYGh680lGh-uXM.woff) format('woff')
+@font-face
+	font-family: 'Open Sans'
+	font-style: normal
+	font-weight: 400
+	src: local('Open Sans'), local('OpenSans'), url(http://fonts.gstatic.com/s/opensans/v13/cJZKeOuBrn4kERxqtaUH3VtXRa8TVwTICgirnJhmVJw.woff2) format('woff2'), url(http://fonts.gstatic.com/s/opensans/v13/cJZKeOuBrn4kERxqtaUH3T8E0i7KZn-EPnyo3HZu7kw.woff) format('woff')
+@font-face
+	font-family: 'Open Sans'
+	font-style: italic
+	font-weight: 300
+	src: local('Open Sans Light Italic'), local('OpenSansLight-Italic'), url(http://fonts.gstatic.com/s/opensans/v13/PRmiXeptR36kaC0GEAetxko2lTMeWA_kmIyWrkNCwPc.woff2) format('woff2'), url(http://fonts.gstatic.com/s/opensans/v13/PRmiXeptR36kaC0GEAetxh_xHqYgAV9Bl_ZQbYUxnQU.woff) format('woff')
+@font-face
+	font-family: 'Ubuntu'
+	font-style: normal
+	font-weight: 300
+	src: local('Ubuntu Light'), local('Ubuntu-Light'), url(http://fonts.gstatic.com/s/ubuntu/v7/_aijTyevf54tkVDLy-dlnFtXRa8TVwTICgirnJhmVJw.woff2) format('woff2'), url(http://fonts.gstatic.com/s/ubuntu/v7/_aijTyevf54tkVDLy-dlnD8E0i7KZn-EPnyo3HZu7kw.woff) format('woff')
+@font-face
+	font-family: 'Ubuntu'
+	font-style: normal
+	font-weight: 400
+	src: local('Ubuntu'), url(http://fonts.gstatic.com/s/ubuntu/v7/sDGTilo5QRsfWu6Yc11AXg.woff2) format('woff2'), url(http://fonts.gstatic.com/s/ubuntu/v7/_xyN3apAT_yRRDeqB3sPRg.woff) format('woff')
+@font-face
+	font-family: 'Ubuntu'
+	font-style: normal
+	font-weight: 500
+	src: local('Ubuntu Medium'), local('Ubuntu-Medium'), url(http://fonts.gstatic.com/s/ubuntu/v7/OsJ2DjdpjqFRVUSto6IffFtXRa8TVwTICgirnJhmVJw.woff2) format('woff2'), url(http://fonts.gstatic.com/s/ubuntu/v7/OsJ2DjdpjqFRVUSto6IffD8E0i7KZn-EPnyo3HZu7kw.woff) format('woff')
+@font-face
+	font-family: 'Ubuntu Mono'
+	font-style: normal
+	font-weight: 400
+	src: local('Ubuntu Mono'), local('UbuntuMono-Regular'), url(http://fonts.gstatic.com/s/ubuntumono/v6/ViZhet7Ak-LRXZMXzuAfkY4P5ICox8Kq3LLUNMylGO4.woff2) format('woff2'), url(http://fonts.gstatic.com/s/ubuntumono/v6/ViZhet7Ak-LRXZMXzuAfkYbN6UDyHWBl620a-IRfuBk.woff) format('woff')
+
+
+// Variables
+
+$main-color: #5016A6
+
+
+// Common styles
+
+body
+	background: #ECEBF2
+	color: #4D4D4D
+	font-family: "Open Sans", sans-serif
+	font-weight: 300
+	font-size: 14px
+
+h1, h2, h3, h4, h5
+	font-family: "Ubuntu", courier
+	margin: 0px
+	padding: 0px
+	font-weight: 300
+
+a
+	color: desaturate(lighten($main-color, 15%), 15%)
+	text-decoration: none
+	outline: 0px !important
+	&:hover, &:focus 
+		color: $main-color
+		text-decoration: none
+	&:active
+		color: darken($main-color, 15%)
+		text-decoration: none
+
+strong.light
+	font-weight: 400
+
+// styling
+
+.top
+	margin-bottom: 100px
+	@media(max-width: 1024px)
+		margin-bottom: 30px
+	.logo-area
+		h1
+			font-family: "Ubuntu Mono"
+			font-size: 69px
+			letter-spacing: -7.6px
+			color: $main-color
+			margin: 45px 0px 6px 0px
+			padding: 0px
+			position: relative
+			display: inline-block
+			font-weight: 400
+			.mini-logo
+				display: block
+				position: absolute
+				top: -15px
+				right: -54px
+				height: 65px
+				width: 65px
+				background: url('../img/mini-logo.png')
+				background-size: cover
+		h2
+			font-family: "Open Sans"
+			font-size: 14px
+			font-weight: 300
+			margin: 0px 5px
+			padding: 0px
+			margin-top: -5px
+			@media(max-width: 1024px)
+				margin-top: -10px
+
+		.menu
+			button
+				margin-top: 80px
+				@media(max-width: 1024px)
+					margin-top: 20px
+				background: url('../img/menu-opener.png')
+				box-shadow: none
+				border: 0
+				background-size: cover
+				height: 15px
+				width: 20px
+				&:active
+					margin-left: 1px
+					margin-right: -1px
+.about
+	padding: 0px 20px
+	float: right
+	@media(max-width: 1024px)
+		margin-bottom: 30px
+	h3
+		font-weight: 500
+		font-size: 18px
+		margin-bottom: 17px
+		color: #555
+	img
+		margin-left: 10px
+		margin-top: 14px
+		height: 110px
+		width: 110px
+		border: 10px solid #EEE
+
+.post
+	margin-top: 35px
+	&.first
+		margin-top: 0px
+		float: left
+	a.header
+		display: block
+		width: 100%
+		height: 367px
+		background-image: url('../img/default-post.png')
+		background-size: cover
+		.action-header
+			width: 100%
+			height: 100%
+			//box-shadow: inset 0px 0px 100px rgba(50, 16, 125, .3)
+			transition: .2s
+		&:hover .action-header
+			background: rgba(50, 16, 125, .5)
+	.content
+		background: #FFF
+		min-height: 150px
+		box-shadow: 0px 0px 2px #EEE
+		padding: 20px 30px
+		h1
+			font-size: 24px
+			font-weight: 500
+		h2
+			font-family: "Open Sans"
+			font-size: 18px
+			color: #999
+			font-weight: 300
+			margin-top: 8px
+		p
+			margin: 0px
+			margin-top: 25px
+			margin-bottom: 17px
+			text-indent: 20px
+		.date
+			color: #999
+
+footer
+	margin-top: 70px
+	background: #442178
+	height: 250px
+	padding: 20px
+	img.logo
+		height: 80px
+		margin-top: 65px
+	span.date
+		color: #E3D7F4
+		font-size: 9px
+		position: relative
+		top: 66px
+		left: -55px
+	h5
+		color: #E3D7F4
+		font-size: 18px
+		font-weight: 500
+		margin-bottom: 15px
+	input, textarea
+		margin-bottom: 6px
+		border: 0px
+		border-radius: 0px
+		background: #E3D7F4
+		color: #442178
+		padding: 5px
+	button.send
+		border-radius: 0px
+		margin: 0px
+		position: relative
+		top: -10px
+		left: 40px
+		background: transparent
+		border: 2px solid #E3D7F4
+		color: #E3D7F4
+		transition: .2s
+		&:hover, &:focus
+			background: #E3D7F4
+			color: #442178

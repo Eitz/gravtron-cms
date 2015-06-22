@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+    	<!-- Material design icons -->
+		<!--link href="css/materialdesignicons.min.css" media="all" rel="stylesheet" type="text/css" /-->
+
+		<!-- Bootstrap styles -->
+		<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+		<!-- Main style -->
+		<link rel="stylesheet" href="/css/style.css" >
+
+		<title><%= (title) ? title . ' - ' : ''  %>Gravidade</title>
+
+	</head>
+	<body>
+		<div class="container">
+			<div class="row top">
+				<div class="col-md-12 logo-area">
+					<div class="pull-left">
+						<h1>Gravidade<span class="mini-logo"></span></h1>
+						<h2>Influenciando todo mundo a mais de <a target="_blank" href="https://pt.wikipedia.org/wiki/Idade_do_universo">13.7bi de anos</a>. Ninguém escapa.</h2>
+					</div>
+					<div class="btn-group menu pull-right">
+					  <button type="button" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+					  <ul class="dropdown-menu">
+					    <li><a href="#">Página Inicial</a></li>
+					    <li><a href="#">Sobre</a></li>
+					    <li><a href="#">Contato</a></li>
+					    <li role="separator" class="divider"></li>
+					    <li><a href="#">Posts</a></li>
+					  </ul>
+					</div>
+				</div>
+			</div>
+			<%= content %>
+		</div>
+		<footer>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-7 text-center">
+						<img src="/img/logo-white.png" class="logo" />
+						<span class="date">2015<%= dt->today->year != 2015 ? ' - '.dt->today->year : '' %>&trade;</span>
+					</div>
+					<div class="col-md-3 contato">
+						<h5>Entre em contato</h5>
+						<form action="/contato" method="POST">
+							<input name="nome" placeholder="Nome"/>
+							<input name="email" placeholder="E-mail" />
+							<button type="submit" class="btn pull-right send">ENVIAR</button>
+							<textarea name="mensagem" rows="4" cols="40" placeholder="Sua Mensagem"></textarea>
+						</form>
+					</div>
+					<!--div class="col-md-2 social">
+						<h5>Redes Sociais</h5>
+					</div-->
+				</div>
+			</div>
+		</footer>
+	</body>
+</html>
