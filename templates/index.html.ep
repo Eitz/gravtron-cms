@@ -1,63 +1,29 @@
 % layout 'default';
-<div class="row">
-	<div class="col-md-5 about">
-		<!--img src="http://placehold.it/112x115/e6e6e6/BBB?text=imagem" class="pull-right" alt="Foto da Empresa" /-->
-		<img src="/img/company.jpg" class="pull-right" alt="Foto da Empresa" />				
-		<h3>Sobre a empresa</h3>
-		<p>Com mais de <strong class="light">13.7 bilhões de anos</strong> de expêriencia, a <a href="#">Gravidade</a> já produziu mais de 71.231 sites para empresas de todos os ramos. Seja você mais um cliente!</p>
-		<p>Sendo assim, podemos falar mais algunas coisinhas por aqui e depois deixar um link para <a href="#">conhecer mais a respeito</a>.</p>
-		<p>Enfim é isso, só queria preencher mesmo o espaço com texto.</p>
-	</div>
-	<div class="col-md-7 post first">
-		<a href="#" class="header" style="background-image: url('/img/posts/post1.png')">
-			<div class="action-header"></div>
-		</a>
-		<div class="content">
-			<h1>Games dentro de games</h1>
-			<h2>Como vamos descobrir se vivemos numa simulação?</h2>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur.…</p>
-			<span class="date">19 de Junho de 2015</span>
-			<a href="#" class="pull-right">Continuar lendo...</a>
+% my $c = 0;
+% for my $post (@$posts){
+	% $c++;
+	<div class="row">
+		% if ($c == 1){
+		<div class="col-md-5 about">
+			<!--img src="http://placehold.it/112x115/e6e6e6/BBB?text=imagem" class="pull-right" alt="Foto da Empresa" /-->
+			<img src="/img/company.jpg" class="pull-right" alt="Foto da Empresa" />				
+			<h3>Sobre a empresa</h3>
+			<p>Com mais de <strong class="light">13.7 bilhões de anos</strong> de expêriencia, a <a href="#">Gravidade</a> já produziu mais de 71.231 sites para empresas de todos os ramos. Seja você mais um cliente!</p>
+			<p>Sendo assim, podemos falar mais algunas coisinhas por aqui e depois deixar um link para <a href="#">conhecer mais a respeito</a>.</p>
+			<p>Enfim é isso, só queria preencher mesmo o espaço com texto.</p>
+		</div>
+		% }
+		<div class="col-md-7 post <%= $c == 1 ? 'first' : '' %>">
+			<a href="#" class="header" style="background-image: url('/img/posts/<%= $post->{image} %>')">
+				<div class="action-header"></div>
+			</a>
+			<div class="content">
+				<h1><%= $post->{title} %></h1>
+				<h2><%= $post->{subtitle} %></h2>
+				<p><%= $post->{intro} %></p>
+				<span class="date"><%= $post->{date}->day %> de <%= $post->{date}->month_name %> de <%= $post->{date}->year %></span>
+				<a href="#" class="pull-right">Continuar lendo...</a>
+			</div>
 		</div>
 	</div>
-</div>
-<div class="row">
-	<div class="col-md-7 post">
-		<a href="#" class="header" style="background-image: url('/img/posts/post2.jpg')">
-			<div class="action-header"></div>
-		</a>
-		<div class="content">
-			<h1>Galáxia Sombrero</h1>
-			<h2>A galáxia mais legal do todo o universo.</h2>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur.…</p>
-			<span class="date">12 de Fevereiro de 2015</span>
-			<a href="#" class="pull-right">Continuar lendo...</a>
-		</div>
-	</div>
-</div>
-<div class="row">
-	<div class="col-md-7 post">
-		<a href="#" class="header">
-			<div class="action-header"></div>
-		</a>
-		<div class="content">
-			<h1>Post exemplo, titulo</h1>
-			<h2>Post exemplo, subtitulo que será um pouco maior, font menor</h2>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur.…</p>
-			<span class="date">12 de Fevereiro de 2015</span>
-			<a href="#" class="pull-right">Continuar lendo...</a>
-		</div>
-	</div>
-</div>
+% }
