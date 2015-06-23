@@ -110,9 +110,11 @@ get '/sobre';
 
 post '/contato';
 
-get '/artigos';
+get '/a' => sub {
+	shift->redirect_to('/');
+};
 
-get '/artigos/:categoria/' => sub {
+get '/a/:categoria/' => sub {
 	my $c = shift;
 	my $categoria = $c->param('categoria');
 
@@ -134,7 +136,7 @@ get '/artigos/:categoria/' => sub {
 	return $c->render(text => "@infos");
 };
 
-get '/artigos/:categoria/:post' => sub {
+get '/a/:categoria/:post' => sub {
 	my $c = shift;
 	
 	my $categoria = $c->param('categoria');
