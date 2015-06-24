@@ -16,7 +16,7 @@ use FindBin;
 use DateTime;
 
 my $POST_HOME = "$FindBin::Bin/posts";
-my $PREFIX = '/devaneios';
+my $PREFIX = '';
 
 get '/' => sub {
 	my $c = shift;
@@ -45,31 +45,33 @@ get '/sobre';
 
 post '/contato';
 
-get "$PREFIX" => sub {
-	shift->redirect_to('/');
-};
+if ($PREFIX){
+	get "$PREFIX" => sub {
+		shift->redirect_to('/');
+	};
+}
 
-#	get "$PREFIX/:categoria/" => sub {
-#		my $c = shift;
-#		my $categoria = $c->param('categoria');
-#	
-#		my $cat_path = "$POST_HOME/$categoria";
-#	
-#		unless (-d $cat_path) {
-#			return $c->reply->not_found;
-#		}
-#	
-#		my @files = $c->find_posts($categoria);
-#	
-#		my @infos;
-#		for my $post (@files){
-#			my $post_path = "$cat_path/$post.post";
-#			my ($info, undef) = $c->read_post($post_path);
-#			push @infos, $info
-#		}
-#	
-#		return $c->render(text => "@infos");
-#	};
+get "$PREFIX/:categoria/" => sub {
+	my $c = shift;
+	my $categoria = $c->param('categoria');
+
+	my @posts;
+	my @files = $c->find_posts($categoria);
+	for my $post (@files){
+
+		my ($info, undef) = $c->read_post($categoria, $post);
+		push @posts, $info;
+	}
+
+	unless (@posts) {
+		return $c->reply->not_found
+	}
+
+	my @posts_sorted = sort{ $b->{date} cmp $a->{date} } @posts;
+
+	$c->stash(posts => \@posts_sorted, categoria => ucfirst $categoria);
+	$c->render('category');
+};
 
 get "$PREFIX/:categoria/:post" => sub {
 	my $c = shift;
@@ -161,12 +163,14 @@ helper read_post => sub {
 helper open_file => sub {
 	my ($c, $filename) = @_;
 	my $file;
-	{ my $fh;
-	  local $/ = undef;
-	  open $fh, '<:encoding(utf8)', $filename;
-	  $file = <$fh>;
-	  close $fh;
-	}
+	$file = eval {
+		  my $fh;
+		  local $/ = undef;
+		  open $fh, '<:encoding(utf8)', $filename;
+		  my $content = <$fh>;
+		  close $fh;
+		  $content;
+	};
 	return $file;
 };
 

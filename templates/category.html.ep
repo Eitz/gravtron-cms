@@ -1,0 +1,20 @@
+% layout 'default';
+<div class="container">
+	<h2 class="category-title"> Categoria: <strong><%= $categoria %></strong></h2>
+ % for my $post (@$posts) {
+	<div class="row">
+		<div class="col-md-7 post">
+			<a href="<%= $post->{url} %>" class="header" style="background-image: url('/img/posts/<%= $post->{image} %>')">
+				<div class="action-header"></div>
+			</a>
+			<div class="content">
+				<h1><%= $post->{title} %></h1>
+				<h2><%= $post->{subtitle} %></h2>
+				<p><%= $post->{intro} %></p>
+				<span class="date"><%= $post->{date}->day %> de <%= $post->{date}->month_name %> de <%= $post->{date}->year %></span>
+				<a href="<%= $post->{url} %>" class="pull-right">Continuar lendo...</a>
+			</div>
+		</div>
+	</div>
+ % }
+</div>
