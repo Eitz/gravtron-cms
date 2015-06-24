@@ -193,9 +193,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="2"
-     inkscape:cx="168.37584"
-     inkscape:cy="61.841474"
+     inkscape:zoom="2.8284271"
+     inkscape:cx="307.41578"
+     inkscape:cy="164.41913"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -1578,7 +1578,10 @@
     </g>
     <g
        id="g3341"
-       transform="translate(78.488853,-13.788582)">
+       transform="translate(78.488853,-13.788582)"
+       inkscape:export-filename="/home/eitz/Desktop/gravidade.org/website/favicon.png"
+       inkscape:export-xdpi="85.969894"
+       inkscape:export-ydpi="85.969894">
       <path
          inkscape:transform-center-y="-31.60065"
          inkscape:transform-center-x="-24.98566"
@@ -2344,7 +2347,7 @@
          sodipodi:end="12.516119"
          sodipodi:start="6.2329454"
          transform="matrix(1.1819449,0.31670118,-0.31670118,1.1819449,262.8049,812.74974)"
-         d="m 232.99117,945.88565 a 7,7 0 1 1 -1e-5,-8e-5"
+         d="m 232.99117,945.88565 c 0.19414,3.86112 -2.77852,7.14855 -6.63964,7.3427 -3.86111,0.19415 -7.14855,-2.77852 -7.3427,-6.63964 -0.19414,-3.86111 2.77852,-7.14855 6.63964,-7.3427 3.86108,-0.19414 7.1485,2.77848 7.34269,6.63956"
          sodipodi:ry="7"
          sodipodi:rx="7"
          sodipodi:cy="946.23718"
