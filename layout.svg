@@ -175,9 +175,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.70710678"
-     inkscape:cx="628.13017"
-     inkscape:cy="-2701.0231"
+     inkscape:zoom="2.8284271"
+     inkscape:cx="269.86615"
+     inkscape:cy="106.11194"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -491,6 +491,16 @@
      inkscape:groupmode="layer"
      id="layer1"
      transform="translate(0,-1052.3622)">
+    <rect
+       style="fill:none;fill-opacity:1;stroke:none"
+       id="rect3294"
+       width="100"
+       height="100"
+       x="213.54625"
+       y="1873.556"
+       inkscape:export-filename="/home/eitz/Desktop/gravidade.org/website/public/logotipo.png"
+       inkscape:export-xdpi="180"
+       inkscape:export-ydpi="180" />
     <rect
        inkscape:export-ydpi="186.57147"
        inkscape:export-xdpi="186.57147"
@@ -1550,7 +1560,10 @@
     </g>
     <g
        id="g3292"
-       transform="matrix(0.992139,0,0,1.0085638,1.6911851,-17.772896)">
+       transform="matrix(0.992139,0,0,1.0085638,16.601275,-136.07794)"
+       inkscape:export-filename="/home/eitz/Desktop/gravidade.org/website/public/logotipo.png"
+       inkscape:export-xdpi="180"
+       inkscape:export-ydpi="180">
       <path
          inkscape:transform-center-y="-31.60065"
          inkscape:transform-center-x="-24.98566"
