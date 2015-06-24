@@ -138,8 +138,10 @@ strong.light {
     display: block;
     width: 100%;
     height: 367px;
+    background-color: rgba(100, 100, 100, 0.3);
     background-image: url("../img/default-post.png");
-    background-size: cover; }
+    background-size: cover;
+    background-position: center; }
     .post a.header .action-header {
       width: 100%;
       height: 100%;
