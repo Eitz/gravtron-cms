@@ -309,5 +309,16 @@ footer {
     .post-body .post-content h3 {
       font-size: 18px;
       margin: 30px 0px 20px; }
+    .post-body .post-content .image {
+      margin: 20px 0px 50px;
+      text-align: center; }
+      .post-body .post-content .image img {
+        width: 100%;
+        height: auto; }
+      .post-body .post-content .image .legend {
+        margin: 8px;
+        font-size: 12px;
+        text-align: center;
+        color: #444; }
 
 /*# sourceMappingURL=style.css.map */
