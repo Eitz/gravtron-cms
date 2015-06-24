@@ -46,7 +46,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-7 text-center">
-						<img src="/img/logo-white.png" class="logo" />
+						<a href="/"><img src="/img/logo-white.png" class="logo" /></a>
 						<span class="date">2015<%= dt->today->year != 2015 ? ' - '.dt->today->year : '' %>&trade;</span>
 					</div>
 					<div class="col-md-3 contato">

@@ -94,20 +94,22 @@ strong.light {
 @media(max-width: 1024px) {
   .top .logo-area h2 {
     margin-top: -10px; } }
-  .top .logo-area .menu button {
-    margin-top: 80px;
-    background: url("../img/menu-opener.png");
-    box-shadow: none;
-    border: 0;
-    background-size: cover;
-    height: 15px;
-    width: 20px; }
+  .top .logo-area .menu {
+    display: none; }
+    .top .logo-area .menu button {
+      margin-top: 80px;
+      background: url("../img/menu-opener.png");
+      box-shadow: none;
+      border: 0;
+      background-size: cover;
+      height: 15px;
+      width: 20px; }
 @media(max-width: 1024px) {
   .top .logo-area .menu button {
     margin-top: 20px; } }
-    .top .logo-area .menu button:active {
-      margin-left: 1px;
-      margin-right: -1px; }
+      .top .logo-area .menu button:active {
+        margin-left: 1px;
+        margin-right: -1px; }
 
 .about {
   padding: 0px 20px;
@@ -187,6 +189,9 @@ footer {
     margin-bottom: 15px; }
   footer .contato {
     position: relative; }
+@media(max-width: 1023px) {
+  footer .contato {
+    display: none; } }
     footer .contato input, footer .contato textarea {
       margin-bottom: 6px;
       border: 0px;
