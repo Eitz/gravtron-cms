@@ -196,23 +196,122 @@ footer
 		font-size: 18px
 		font-weight: 500
 		margin-bottom: 15px
-	input, textarea
-		margin-bottom: 6px
-		border: 0px
-		border-radius: 0px
-		background: #E3D7F4
-		color: #442178
-		padding: 5px
-	button.send
-		border-radius: 0px
-		margin: 0px
+	.contato
 		position: relative
-		top: -10px
-		left: 40px
-		background: transparent
-		border: 2px solid #E3D7F4
-		color: #E3D7F4
-		transition: .2s
-		&:hover, &:focus
+		input, textarea
+			margin-bottom: 6px
+			border: 0px
+			border-radius: 0px
 			background: #E3D7F4
 			color: #442178
+			padding: 5px
+		button.send
+			border-radius: 0px
+			margin: 0px
+			position: absolute
+			top: 50px
+			left: 230px
+			background: transparent
+			border: 2px solid #E3D7F4
+			color: #E3D7F4
+			transition: .2s
+			&:hover, &:focus
+				background: #E3D7F4
+				color: #442178
+
+// post page
+
+.author
+	margin: 65px 0px
+	@media(max-width: 992px)
+		display: none
+	.author-label
+		position: absolute
+		color: #FFF
+		background: #442178
+		font-weight: 500
+		font-family: "Ubuntu"
+		padding: 2px 10px
+		top: -10px
+		left: 35px
+
+	.author-body
+		text-align: center
+		background: #FFF
+		margin: 0px 30px
+		@media(max-width: 1200px)
+			margin: 0px 10px
+		padding: 20px
+		h4
+			font-size: 18px
+			font-weight: 500
+			margin: 5px 0px
+		h5
+			font-size: 14px
+			font-family: "Open Sans"
+		img
+			margin: 20px 0px
+			border-radius: 50%
+			width: 90px
+			height: 90px
+			box-shadow: 2px 2px 10px #333
+		p
+			margin: 0px 5px
+
+
+
+.post-header	
+	.image
+		height: 465px
+		width: 100%
+		background-position: center
+		background-size: cover
+.post-body
+	position: relative
+	background: #FFF
+	padding-top: 15px
+	margin-bottom: 50px
+	padding-bottom: 20px
+	p.post-date
+		text-align: right
+		margin-right: 50px
+		font-weight: 500
+		color: #999
+		@media(max-width: 767px)
+			margin-top: 32px
+			&:before
+				content: "Postado em: "
+
+	h1.post-title
+		text-align: center
+		font-size: 28px
+		line-height: 79px
+		color: #FFF
+		background: #442178
+		width: 500px
+		height: 80px		
+		font-weight: 500
+		position: absolute
+		top: -40px
+		left: -100px
+		@media(max-width: 992px)
+			left: 0px
+		@media(max-width: 767px)
+			width: 100%
+			height: auto
+	h2.post-subtitle
+		font-size: 22px
+		font-family: "Open Sans"
+		margin: 30px 0px
+		color: #888
+		font-weight: 400
+
+	.post-content
+		padding: 0px 20px
+		font-size: 15px
+		p
+			margin: 20px 0px
+			text-align: justify
+		h3
+			font-size: 18px
+			margin: 30px 0px 20px

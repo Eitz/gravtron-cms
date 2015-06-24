@@ -1,6 +1,7 @@
 % layout 'default';
 % my $c = 0;
-% for my $post (@$posts){
+<div class="container">
+ % for my $post (@$posts) {
 	% $c++;
 	<div class="row">
 		% if ($c == 1){
@@ -26,4 +27,5 @@
 			</div>
 		</div>
 	</div>
-% }
+ % }
+</div>
