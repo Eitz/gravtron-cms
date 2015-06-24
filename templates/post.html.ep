@@ -1,0 +1,15 @@
+% layout 'default';
+<div class="row">
+	<div class="col-md-7 post">
+		<a href="<%= $info->{url} %>" class="header" style="background-image: url('/img/posts/<%= $info->{image} %>')">
+			<div class="action-header"></div>
+		</a>
+		<div class="content">
+			<h1><%= $info->{title} %></h1>
+			<h2><%= $info->{subtitle} %></h2>
+			<p><%= $info->{intro} %></p>
+			<span class="date"><%= $info->{date}->day %> de <%= $info->{date}->month_name %> de <%= $info->{date}->year %></span>
+			<a href="<%= $info->{url} %>" class="pull-right">Continuar lendo...</a>
+		</div>
+	</div>
+</div>

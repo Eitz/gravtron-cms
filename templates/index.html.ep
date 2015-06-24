@@ -14,7 +14,7 @@
 		</div>
 		% }
 		<div class="col-md-7 post <%= $c == 1 ? 'first' : '' %>">
-			<a href="#" class="header" style="background-image: url('/img/posts/<%= $post->{image} %>')">
+			<a href="<%= $post->{url} %>" class="header" style="background-image: url('/img/posts/<%= $post->{image} %>')">
 				<div class="action-header"></div>
 			</a>
 			<div class="content">
@@ -22,7 +22,7 @@
 				<h2><%= $post->{subtitle} %></h2>
 				<p><%= $post->{intro} %></p>
 				<span class="date"><%= $post->{date}->day %> de <%= $post->{date}->month_name %> de <%= $post->{date}->year %></span>
-				<a href="#" class="pull-right">Continuar lendo...</a>
+				<a href="<%= $post->{url} %>" class="pull-right">Continuar lendo...</a>
 			</div>
 		</div>
 	</div>

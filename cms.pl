@@ -16,6 +16,7 @@ use FindBin;
 use DateTime;
 
 my $POST_HOME = "$FindBin::Bin/posts";
+my $PREFIX = '/devaneios';
 
 app->config(
 	hypnotoad => {listen => ['http://*:3000']}
@@ -44,15 +45,16 @@ helper find_posts => sub {
 
     opendir(my $dh, $dir) or return undef;
     my @files = 
+    			map { s/\.post//; $_ }
     			grep { /\.post$/ } readdir($dh);
     closedir($dh);
     return @files;
 };
 
 helper read_post => sub {
-	my ($c, $filename, $extra) = @_;
+	my ($c, $categoria, $post, $extra) = @_;
 
-	say $filename;
+	my $filename = "$POST_HOME/$categoria/$post.post";
 
 	my $file;
 	{ my $fh;
@@ -77,6 +79,10 @@ helper read_post => sub {
 		}
 		$info{$key} = $value;
 	}
+
+	$info{categoria} = $categoria;
+	$info{post_slug} = $post;
+	$info{url} = "$PREFIX/$categoria/$post";
 	return \%info, $body;
 };
 
@@ -86,16 +92,13 @@ get '/' => sub {
 	my @posts;
 	my @categorias = $c->find_categories;
 
-	for my $cat (@categorias){
+	for my $categoria (@categorias){
 
-		my $cat_path = "$POST_HOME/$cat";
-		my @files = $c->find_posts($cat);
+		my @files = $c->find_posts($categoria);
 				
 		for my $post (@files){
 
-			my $post_path = "$cat_path/$post";
-
-			my ($info, undef) = $c->read_post("$post_path");
+			my ($info, undef) = $c->read_post($categoria, $post);
 			push @posts, $info;
 		}
 	}
@@ -110,33 +113,33 @@ get '/sobre';
 
 post '/contato';
 
-get '/a' => sub {
+get "$PREFIX" => sub {
 	shift->redirect_to('/');
 };
 
-get '/a/:categoria/' => sub {
-	my $c = shift;
-	my $categoria = $c->param('categoria');
+#	get "$PREFIX/:categoria/" => sub {
+#		my $c = shift;
+#		my $categoria = $c->param('categoria');
+#	
+#		my $cat_path = "$POST_HOME/$categoria";
+#	
+#		unless (-d $cat_path) {
+#			return $c->reply->not_found;
+#		}
+#	
+#		my @files = $c->find_posts($categoria);
+#	
+#		my @infos;
+#		for my $post (@files){
+#			my $post_path = "$cat_path/$post.post";
+#			my ($info, undef) = $c->read_post($post_path);
+#			push @infos, $info
+#		}
+#	
+#		return $c->render(text => "@infos");
+#	};
 
-	my $cat_path = "$POST_HOME/$categoria";
-
-	unless (-d $cat_path) {
-		return $c->reply->not_found;
-	}
-
-	my @files = $c->find_posts($categoria);
-
-	my @infos;
-	for my $post (@files){
-		my $post_path = "$cat_path/$post.post";
-		my ($info, undef) = $c->read_post($post_path);
-		push @infos, $info
-	}
-
-	return $c->render(text => "@infos");
-};
-
-get '/a/:categoria/:post' => sub {
+get "$PREFIX/:categoria/:post" => sub {
 	my $c = shift;
 	
 	my $categoria = $c->param('categoria');
@@ -149,9 +152,12 @@ get '/a/:categoria/:post' => sub {
 		return $c->reply->not_found
 	}
 
-    my ($info, $body) = $c->read_post($post_path);
+    my ($info, $body) = $c->read_post($categoria, $post);
 
-	return $c->render(text => 'opa');
+
+    $c->stash(info => $info);
+    $c->stash(body => $body);
+	return $c->render('post');
 };
 
 app->start;
