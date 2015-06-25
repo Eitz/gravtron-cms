@@ -31,15 +31,15 @@ image: sombrero.jpg
  	<p class="legend">Que beleza, né?.</p>
 </div>
 <div class="image">
-	<a href="https://upload.wikimedia.org/wikipedia/commons/e/ec/Phot-07c-00-fullres.jpg" target="_blank">
-		<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Phot-07c-00-fullres.jpg/640px-Phot-07c-00-fullres.jpg" />
+	<a href="/img/assets/sombrero-3.jpg" target="_blank">
+		<img src="/img/assets/sombrero-3.jpg" />
 	</a>
  	<p class="legend">Em preto e branco.</p>
 </div>
 
 <div class="image">
-	<a href="https://upload.wikimedia.org/wikipedia/commons/c/c1/Phot-07b-00-fullres.jpg">
-		<img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Phot-07b-00-fullres.jpg" />
+	<a href="/img/assets/sombrero-2.jpg">
+		<img src="/img/assets/sombrero-2.jpg" />
 	</a>
 	<p class="legend">Detalhe da espessa camada de poeira.</p>
 </div>
