@@ -13,23 +13,20 @@ image: sombrero.jpg
 
 <p> Foi Camille Flammarion quem descobriu que sua posição coincidia com o objeto <a href="https://en.wikipedia.org/wiki/Herschel_400_Catalogue" target="_blank">Herschel</a>'s H I.43, que é a Gálaxia do Sombreiro (NGC 4594), e a adicionol na lista oficial Messier em 1921. Este objeto também é mencionado por Pierre Méchain como sua descoberta em sua carta de 6 de Maio de 1783. William Herschel encontrará a mesma galáxia independentemente em 9 de Maio de 1784.<p>
 
-<p>Esta galáxia é do tipo <strong class="light">Sa-Sb</strong>, contando com um grande e luminoso núcleo, podendo ser visto em fotografias de curta exposição, como também espirais bem definidas.</p>
+<h3>Curiosidades</h3>
 
-<!-- hide
-Recent very deep photographs from the Anglo-Australian Observatory show that this galaxy has a very extended faint halo.
+<p>Esta galáxia é do tipo <a href="/img/assets/galaxy-classification.gif" target="_blank">Sa-Sb</a></strong>, contando com um grande e luminoso núcleo, podendo ser visto em fotografias de curta exposição, porém possuindo também espirais bem definidas.</p>
 
-This galaxy was the first one with a large redshift found, by Vesto M. Slipher at Lowell Observatory in 1912. Its redshift corresponds to a recession velocity of about 1,000 km/sec (it is caused by the Hubble effect, i.e. the cosmic expansion). This was too fast for the Sombrero to be an object in our Milky Way galaxy. Slipher also detected the galaxy's (then the nebula's) rotation.
+<p>Recentes fotográfias de campo ultra-profundo do Observatório Anglo-Australiano mostraram que esta galáxia possui um gigantestesca auréola.</p>
 
-M104 is the dominating member of a small group of galaxies, the M104 group or NGC 4594 group of galaxies. 
+<p>Ela foi a primeira galáxia encotrada que possuia um grande desvio para o vermelho. Que corresponde à uma velocidade de recessão de aproximadamente 1.000 km/seg (Causado pelo efeito Hubble: a expanção cósmica). Concluiu-se que a Sombreiro não estava dentro da Via Láctea pois essa velocidade era rápida demais.
 
-
--->
+<p>M104 (Sombreiro) é o membro dominante de um pequeno grupo de galáxias, o grupo M104, ou grupo de galáxias NGC 4594.<p>
 
 <h3>Outras imagens para deleite (Sombrero Galaxy)</h3>
 <div class="image">
-	<a href="https://upload.wikimedia.org/wikipedia/commons/e/e9/Sombrero_Galaxy_in_infrared_light_%28Hubble_Space_Telescope_and_Spitzer_Space_Telescope%29.jpg" target="_blank">
-		<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Sombrero_Galaxy_in_infrared_light_%28Hubble_Space_Telescope_and_Spitzer_Space_Telescope%29.jpg/1024px-Sombrero_Galaxy_in_infrared_light_%28Hubble_Space_Telescope_and_Spitzer_Space_Telescope%29.jpg"
-		 	/>
+	<a href="/img/assets/sombrero-1.jpg">
+		<img src="/img/assets/sombrero-1.jpg"/>
 	 </a>
  	<p class="legend">Que beleza, né?.</p>
 </div>
@@ -48,7 +45,6 @@ M104 is the dominating member of a small group of galaxies, the M104 group or NG
 </div>
 
 <h3> Quer saber mais? Leia direto na fonte: </h3>
-
 <p>
 	<a href="http://messier.seds.org/m/m104.html">http://messier.seds.org/m/m104.html</a>
 </p>
