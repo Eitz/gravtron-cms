@@ -44,6 +44,13 @@ image: sombrero.jpg
 	<p class="legend">Detalhe da espessa camada de poeira.</p>
 </div>
 
+<div class="image">
+	<a href="/img/assets/sombrero-4.jpg">
+		<img src="/img/assets/sombrero-4.jpg" />
+	</a>
+	<p class="legend">A auréola que envolve a galáxia.</p>
+</div>
+
 <h3> Quer saber mais? Leia direto na fonte: </h3>
 <p>
 	<a href="http://messier.seds.org/m/m104.html">http://messier.seds.org/m/m104.html</a>
