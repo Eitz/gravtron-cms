@@ -45,8 +45,8 @@ image: sombrero.jpg
 </div>
 
 <div class="image">
-	<a href="/img/assets/sombrero-4.jpg">
-		<img src="/img/assets/sombrero-4.jpg" />
+	<a href="/img/assets/sombrero-halo.jpg">
+		<img src="/img/assets/sombrero-halo.jpg" />
 	</a>
 	<p class="legend">A auréola que envolve a galáxia.</p>
 </div>
