@@ -1,25 +1,24 @@
 title => Perl: Como habilitar UTF-8 usando DBI
 subtitle => Habilitando unicode para MySql e SQLite no DBI
-intro => Muitas vezes temos problemas com encode. E isso é um saco. Pra se livrar `quase` que permanentemente desses problemas quando estiver trabalhando com banco de dados, basta habilitar uma flag na conexão que o DBI sempre retornará unicode.
+intro => Muitas vezes temos problemas com encode - e isso é uma merda. Pra se livrar `quase` que permanentemente desses problemas quando estiver trabalhando com banco de dados, basta habilitar uma flag na conexão que o DBI sempre retornará unicode.
 date => 2015-06-29
 image => dbi.png
 ↓↓↓
-<p>Muitas vezes temos problemas com encode. E isso é um saco. Pra se livrar `quase` que permanentemente desses problemas quando estiver trabalhando com banco de dados, basta habilitar uma flag na conexão que o DBI sempre retornará unicode.</p>
+<p>Muitas vezes temos problemas com encode - e isso é uma merda. Pra se livrar `quase` que permanentemente desses problemas quando estiver trabalhando com banco de dados, basta habilitar uma flag na conexão que o DBI sempre retornará unicode.</p>
 
-<h3> Como Habilitar UTF-8 no DBI para MySQL </h3>
+<h3> MySQL </h3>
 
-<p>Para converter automaticamente para UTF-8 no MySQl basta adicionar a flag <code>mysql_enable_utf8 => 1</code> na sua linha de conexão:</p>
-<small>
-	<code class="perl">
-		DBI->connect('dbi:mysql:dbname=database', 'user', 'pass', { mysql_enable_utf8 => 1 });
-	</code>
-</small>
+<p>Para converter automaticamente para UTF-8 no MySQL basta adicionar a flag <code>mysql_enable_utf8 => 1</code> em sua linha de conexão:</p>
 
-<h3> Como Habilitar UTF-8 no DBI para SQLite </h3>
+<code class="bg">
+	DBI->connect('dbi:mysql:dbname=database', 'user', 'pass', { mysql_enable_utf8 => 1 })
+</code>
 
-<p>Para converter automaticamente para UTF-8 no SQLite basta adicionar a flag <code>sqlite_unicode => 1</code> na sua linha de conexão:</p>
-<small>
-	<code class="perl">
-		DBI->connect('dbi:SQLite:dbname=database.db', '', '', { sqlite_unicode => 1 });
-	</code>
-</small>
+
+<h3> SQLite </h3>
+
+<p>Já no SQLite, para converter automaticamente para UTF-8 adiciona-se a flag <code>sqlite_unicode => 1</code> em sua linha de conexão:</p>
+
+<code class="bg">
+	DBI->connect('dbi:SQLite:dbname=database.db', '', '', { sqlite_unicode => 1 })
+</code>
