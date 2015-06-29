@@ -45,6 +45,28 @@ get '/sobre';
 
 post '/contato';
 
+get '/sitemap' => [format => qw/txt/] => sub {
+	my $c = shift;
+
+	my $text = "gravidade.org/\n";
+
+	my @categorias = $c->find_categories;
+
+	for my $categoria (@categorias){
+
+		$text .= "gravidade.org/$categoria\n";
+
+		my @files = $c->find_posts($categoria);
+				
+		for my $post (@files){
+			my ($info, undef) = $c->read_post($categoria, $post);
+			$text .= "gravidade.org$info->{url}\n";
+		}
+	}
+
+	return $c->render(text => $text);
+};
+
 if ($PREFIX){
 	get "$PREFIX" => sub {
 		shift->redirect_to('/');
@@ -58,9 +80,10 @@ get "$PREFIX/:categoria/" => sub {
 	my @posts;
 	my @files = $c->find_posts($categoria);
 	for my $post (@files){
-
 		my ($info, undef) = $c->read_post($categoria, $post);
-		push @posts, $info;
+		if ($info){
+			push @posts, $info;
+		}
 	}
 
 	unless (@posts) {
@@ -88,6 +111,8 @@ get "$PREFIX/:categoria/:post" => sub {
 	$c->stash(info => $info, body => $body);	
 	return $c->render('post');
 };
+
+
 
 helper dt => sub {
 	return "DateTime";
