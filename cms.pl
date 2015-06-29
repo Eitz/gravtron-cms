@@ -48,19 +48,19 @@ post '/contato';
 get '/sitemap' => [format => qw/txt/] => sub {
 	my $c = shift;
 
-	my $text = "gravidade.org/\n";
+	my $text = "http://gravidade.org/\n";
 
 	my @categorias = $c->find_categories;
 
 	for my $categoria (@categorias){
 
-		$text .= "gravidade.org/$categoria\n";
+		$text .= "http://gravidade.org/$categoria\n";
 
 		my @files = $c->find_posts($categoria);
 				
 		for my $post (@files){
 			my ($info, undef) = $c->read_post($categoria, $post);
-			$text .= "gravidade.org$info->{url}\n";
+			$text .= "http://gravidade.org$info->{url}\n";
 		}
 	}
 
