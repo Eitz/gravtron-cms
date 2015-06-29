@@ -54,13 +54,13 @@ get '/sitemap' => [format => qw/txt/] => sub {
 
 	for my $categoria (@categorias){
 
-		$text .= "http://gravidade.org/$categoria\n";
+		$text .= "http://gravidade.org/$categoria/\n";
 
 		my @files = $c->find_posts($categoria);
 				
 		for my $post (@files){
 			my ($info, undef) = $c->read_post($categoria, $post);
-			$text .= "http://gravidade.org$info->{url}\n";
+			$text .= "http://gravidade.org$info->{url}/\n";
 		}
 	}
 
