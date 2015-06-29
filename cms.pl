@@ -137,7 +137,7 @@ helper read_post => sub {
 	
 	for my $line (split '\n', $info_text){
 
-		my ($key, $value) = split ':', $line;
+		my ($key, $value) = split '=>', $line;
 		
 		$key =~ s/^\s+//; $key =~ s/\s+$//;
 		$value =~ s/^\s+//; $value =~ s/\s+$//;

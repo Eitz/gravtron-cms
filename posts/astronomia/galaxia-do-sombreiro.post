@@ -1,8 +1,8 @@
-title: Galáxia do Sombreiro
-subtitle: A galáxia mais bonita do todo o universo.
-intro: A Galáxia do Sombreiro leva esse nome devido a sua aparència única, que se assemelha a um chapéu. Ela possuí um núcleo brilhante que é cercado por um disco achatado de material escuro, tudo isso em sua distância gigantesca de 28 milhões de anos-luz da Terra; foi descoberta em 1781.
-date: 2015-06-23
-image: sombrero.jpg
+title => Galáxia do Sombreiro
+subtitle => A galáxia mais bonita do todo o universo.
+intro => A Galáxia do Sombreiro leva esse nome devido a sua aparència única, que se assemelha a um chapéu. Ela possuí um núcleo brilhante que é cercado por um disco achatado de material escuro, tudo isso em sua distância gigantesca de 28 milhões de anos-luz da Terra; foi descoberta em 1781.
+date => 2015-06-23
+image => sombrero.jpg
 ↓↓↓
 <p>A <strong>Galáxia do Sombreiro</strong> (Messier 104, NGC 4594) leva esse nome devido a sua aparência única, que se assemelha a um chapéu. Ela possuí um núcleo brilhante que é cercado por um disco achatado de material escuro, tudo isso em sua distância gigantesca de 28 milhões de anos-luz da Terra; foi descoberta em 1781.</p>
 

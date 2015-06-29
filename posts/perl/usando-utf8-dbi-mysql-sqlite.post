@@ -1,8 +1,8 @@
-title: Perl: Como habilitar UTF-8 usando DBI
-subtitle: Habilitando unicode para MySql e SQLite no DBI
-intro: Muitas vezes temos problemas com encode. E isso é um saco. Pra se livrar `quase` que permanentemente desses problemas quando estiver trabalhando com banco de dados, basta habilitar uma flag na conexão que o DBI sempre retornará unicode.
-date: 2015-06-29
-image: dbi.png
+title => Perl: Como habilitar UTF-8 usando DBI
+subtitle => Habilitando unicode para MySql e SQLite no DBI
+intro => Muitas vezes temos problemas com encode. E isso é um saco. Pra se livrar `quase` que permanentemente desses problemas quando estiver trabalhando com banco de dados, basta habilitar uma flag na conexão que o DBI sempre retornará unicode.
+date => 2015-06-29
+image => dbi.png
 ↓↓↓
 <p>Muitas vezes temos problemas com encode. E isso é um saco. Pra se livrar `quase` que permanentemente desses problemas quando estiver trabalhando com banco de dados, basta habilitar uma flag na conexão que o DBI sempre retornará unicode.</p>
 
