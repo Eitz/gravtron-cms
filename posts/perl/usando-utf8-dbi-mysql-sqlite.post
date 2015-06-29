@@ -8,14 +8,18 @@ image => dbi.png
 
 <h3> Como Habilitar UTF-8 no DBI para MySQL </h3>
 
-<p>Para converter automaticamente para UTF-8 no MySQl basta adicionar essa flag na sua linha de conexão:</p>
-<code class="perl">
-	my $db = DBI->connect('dbi:mysql:dbname=database', 'user', 'pass', { mysql_enable_utf8 => 1 });
-</code>
+<p>Para converter automaticamente para UTF-8 no MySQl basta adicionar a flag <code>mysql_enable_utf8 => 1</code> na sua linha de conexão:</p>
+<small>
+	<code class="perl">
+		DBI->connect('dbi:mysql:dbname=database', 'user', 'pass', { mysql_enable_utf8 => 1 });
+	</code>
+</small>
 
 <h3> Como Habilitar UTF-8 no DBI para SQLite </h3>
 
-<p>Para converter automaticamente para UTF-8 no SQLite basta adicionar essa flag na sua linha de conexão:</p>
-<code class="perl">
-	my $db = DBI->connect('dbi:SQLite:dbname=database.db', '', '', { sqlite_unicode => 1 });
-</code>
+<p>Para converter automaticamente para UTF-8 no SQLite basta adicionar a flag <code>sqlite_unicode => 1</code> na sua linha de conexão:</p>
+<small>
+	<code class="perl">
+		DBI->connect('dbi:SQLite:dbname=database.db', '', '', { sqlite_unicode => 1 });
+	</code>
+</small>
