@@ -303,8 +303,14 @@ footer {
     left: 0px; } }
 @media(max-width: 767px) {
   .post-body h1.post-title {
+    min-width: 100%;
     width: 100%;
-    height: auto; } }
+    height: auto;
+    position: relative;
+    top: -80px;
+    left: 0;
+    padding: 0;
+    margin-bottom: -100px; } }
   .post-body h2.post-subtitle {
     font-size: 22px;
     font-family: "Open Sans";

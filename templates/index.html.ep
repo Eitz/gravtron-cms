@@ -8,7 +8,7 @@
 		<div class="col-md-5 about">
 			<!--img src="http://placehold.it/112x115/e6e6e6/BBB?text=imagem" class="pull-right" alt="Foto da Empresa" /-->
 			<img src="/img/company.jpg" class="pull-right" alt="Foto da Empresa" />				
-			<h3>Sobre a empresa</h3>
+			<h3>Sobre o site</h3>
 			<p>Com mais de <strong class="light">13.7 bilhões de anos</strong> de expêriencia, a <a href="#">Gravidade</a> já produziu mais de 71.231 sites para empresas de todos os ramos. Seja você mais um cliente!</p>
 			<p>Sendo assim, podemos falar mais algunas coisinhas por aqui e depois deixar um link para <a href="#">conhecer mais a respeito</a>.</p>
 			<p>Enfim é isso, só queria preencher mesmo o espaço com texto.</p>
