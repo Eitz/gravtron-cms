@@ -1,4 +1,4 @@
-% layout 'cms';
+% layout 'gravitron';
 % content_for header => begin
 	<meta property="og:image" content="http://gravidade.org/img/mini-logo.png"/>
 % end
@@ -18,7 +18,7 @@
 		</div>
 		% }
 		<div class="col-md-7 post <%= $c == 1 ? 'first' : '' %>">
-			<a href="<%= $post->{url} %>" class="header" style="background-image: url('/img/posts/<%= $post->{image} %>')">
+			<a href="<%= $post->{url} %>" class="header" style="background-image: url('/cms/<%= $post->{image} %>')">
 				<div class="action-header"></div>
 			</a>
 			<div class="content">

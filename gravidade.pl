@@ -17,7 +17,7 @@ get '/sobre';
 
 get '/contato' => sub {
 	my $c = shift;
-	$c->redirect_to('/#contato');
+	$c->render('message_received');
 };
 
 post '/contato' => sub {
@@ -40,7 +40,7 @@ post '/contato' => sub {
 	my $post = $c->cms->random_post;
 
 	$c->stash(post => $post);
-	$c->render('cms/message_received');
+	$c->render('message_received');
 };
 
 get '/sitemap' => [format => qw/txt/] => sub {
@@ -51,11 +51,11 @@ get '/sitemap' => [format => qw/txt/] => sub {
 	return $c->render(text => $text);
 };
 
-plugin 'CMS';
+plugin 'CMS::Gravitron';
 
 app->config(
 	hypnotoad => {listen => ['http://*:3000']},
 );
 
-app->log->level('info');
+# app->log->level('info');
 app->start;

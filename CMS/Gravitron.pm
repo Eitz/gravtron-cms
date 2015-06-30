@@ -1,4 +1,4 @@
-package CMS;
+package CMS::Gravitron;
 use FindBin;
 use DateTime;
 
@@ -18,6 +18,12 @@ sub register {
 	my $prefix = $self->config->{prefix};
 	my $home = $self->config->{post_home};
 
+	# static serve
+	push @{$app->static->paths}, "$home/assets";
+
+	# templates
+	push @{$app->renderer->paths}, "$home/templates";
+
 	# routes
 	my $r = $app->routes;
 	if (!@{$r->children} && ($prefix eq '' || $prefix eq '/')){
@@ -27,10 +33,13 @@ sub register {
 						 'Suggestion: Load the plugin after everything.');	
 	}
 
-	$r = $r->under($prefix);
-	$r->get("/" => sub { _index(shift, $self) } );
-	$r->get("/:categoria/" => sub { _category(shift, $self)});
-	$r->get("/:categoria/:post" => sub { _post(shift, $self)});
+	unless ($prefix eq '' || $prefix eq '/'){
+		$r = $r->under($prefix);
+	}
+	
+	$r->get("/" => sub { _index(shift, $self) } )->name("cms_root");
+	$r->get("/:categoria/" => sub { _category(shift, $self)})->name("cms_category");
+	$r->get("/:categoria/:post" => sub { _post(shift, $self)})->name("cms_post");
 
 	# helpers
 	$app->helper(cms => sub { _cms_helper(shift, $self, @_)});
@@ -48,7 +57,7 @@ sub _cms_helper {
 sub _config {
 	my ($self, $app) = @_;
 
-	my $root = "$FindBin::Bin";
+	my $root = "$FindBin::Bin/CMS";
 
 	my $filename = "$root/cms.config";
 
@@ -75,7 +84,7 @@ sub _config {
 	}
 
 	$app->log->debug("CMS: Posts folder is: $config->{post_home}");
-	$app->log->debug("CMS: Prefix for cms pages is: /$config->{prefix}");
+	$app->log->debug("CMS: Prefix for cms pages is: " . ($config->{prefix}?$config->{prefix}:'/'));
 
 	return $config;
 }
@@ -103,7 +112,8 @@ sub _index {
 	my @posts_sorted = sort{ $b->{date} cmp $a->{date} } @posts;
 
 	$c->stash(posts => \@posts_sorted);
-	return $c->render('cms/index');
+	say @{$c->app->renderer->paths};
+	return $c->render('cms_index.html.ep');
 }
 
 sub _category {
@@ -126,7 +136,7 @@ sub _category {
 	my @posts_sorted = sort{ $b->{date} cmp $a->{date} } @posts;
 
 	$c->stash(posts => \@posts_sorted, categoria => ucfirst $categoria);
-	$c->render('cms/category');
+	$c->render('cms_category');
 }
 
 sub _post {
@@ -142,7 +152,7 @@ sub _post {
 	}
 
 	$c->stash(post => $post);	
-	return $c->render('cms/post');
+	return $c->render('cms_post');
 }
 
 
@@ -152,7 +162,7 @@ sub _find_categories {
     my $home = $self->config->{post_home};
 
     opendir(my $dh, $home) or return undef;
-    my @dirs = grep { -d "$home/$_" && !/\..?/ } readdir($dh);
+    my @dirs = grep { -d "$home/$_" && !/\..?/ && !/assets/ } readdir($dh);
     closedir($dh);
     return @dirs;
 };

@@ -1,10 +1,10 @@
-% layout 'cms';
+% layout 'gravitron';
 <div class="container">
 	<h2 class="category-title"> Categoria: <strong><%= $categoria %></strong></h2>
  % for my $post (@$posts) {
 	<div class="row">
 		<div class="col-md-7 post">
-			<a href="<%= $post->{url} %>" class="header" style="background-image: url('/img/posts/<%= $post->{image} %>')">
+			<a href="<%= $post->{url} %>" class="header" style="background-image: url('/cms/<%= $post->{image} %>')">
 				<div class="action-header"></div>
 			</a>
 			<div class="content">
