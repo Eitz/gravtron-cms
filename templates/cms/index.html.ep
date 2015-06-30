@@ -1,4 +1,4 @@
-% layout 'default';
+% layout 'cms';
 % content_for header => begin
 	<meta property="og:image" content="http://gravidade.org/img/mini-logo.png"/>
 % end
@@ -14,7 +14,7 @@
 			<h3>Sobre o site</h3>
 			<p>Aqui você encontra: Nerdisses, Astronomia, Programação, essas coisas e mais tudo que há de bom. </p>
 			<p>Ou seja, muitas coisas interessantes, outras nem tanto.</p>
-			<p><strong class="light">Publicidade:</strong> Sendo assim, já posso lhe dizer que também desenvolvo sites e sistemas. Se você gostou do site e quiser algo semelhante (Ou totalmente diferente), entre em contato no rodapé da página.</p>
+			<p><strong class="light">Publicidade:</strong> Sendo assim, já posso lhe dizer que também desenvolvo sites e sistemas. Se você gostou do site e quiser algo semelhante (Ou totalmente diferente), <a href="#contato">entre em contato</a> no rodapé da página.</p>
 		</div>
 		% }
 		<div class="col-md-7 post <%= $c == 1 ? 'first' : '' %>">
@@ -25,7 +25,7 @@
 				<h1><%= $post->{title} %></h1>
 				<h2><%= $post->{subtitle} %></h2>
 				<p><%= $post->{intro} %></p>
-				<span class="date"><%= $post->{date}->day %> de <%= $post->{date}->month_name %> de <%= $post->{date}->year %></span>
+				<span class="date"><%= eval { $post->{date}->day .' de ' . $post->{date}->month_name .' de '. $post->{date}->year }%></span>
 				<a href="<%= $post->{url} %>" class="pull-right">Continuar lendo...</a>
 			</div>
 		</div>

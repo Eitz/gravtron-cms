@@ -45,20 +45,22 @@
 			</div>
 		</div>
 		<%= content %>
-		<footer>
+		<footer id="contato">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-7 text-center">
 						<a href="/"><img src="/img/logo-white.png" class="logo" /></a>
-						<span class="date">2015<%= dt->today->year != 2015 ? ' - '.dt->today->year : '' %>&trade;</span>
+						% use DateTime;
+						% my $year = DateTime->today->year;
+						<span class="date">2015<%= $year != 2015 ? ' - ' . $year : '' %>&trade;</span>
 					</div>
 					<div class="col-md-3 contato">
 						<h5>Entre em contato</h5>
 						<form action="/contato" method="POST">
-							<input name="nome" placeholder="Nome"/>
-							<input name="email" placeholder="E-mail" />
+							<input required name="nome" placeholder="Nome" type="text"/>
+							<input required name="email" placeholder="E-mail" type="email" />
 							<button type="submit" class="btn pull-right send">ENVIAR</button>
-							<textarea name="mensagem" rows="4" cols="40" placeholder="Sua Mensagem"></textarea>
+							<textarea required name="mensagem" rows="4" cols="40" placeholder="Sua Mensagem"></textarea>
 						</form>
 					</div>
 					<!--div class="col-md-2 social">

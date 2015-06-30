@@ -1,0 +1,24 @@
+% layout 'cms';
+<div class="container">
+	<div class="row">
+		<div class="col-md-7">
+			<h4>Sua mensagem foi recebida com sucesso, fique atento à sua caixa de entrada que em breve retornaremos. Você já pode voltar para a página inicial <a href="/">clicando aqui.</a></h4>
+			<hr />
+			<h3>Ou, caso se interesse, aqui vai um post aleatório:</h3>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-7 post">
+			<a href="<%= $post->{url} %>" class="header" style="background-image: url('/img/posts/<%= $post->{image} %>')">
+				<div class="action-header"></div>
+			</a>
+			<div class="content">
+				<h1><%= $post->{title} %></h1>
+				<h2><%= $post->{subtitle} %></h2>
+				<p><%= $post->{intro} %></p>
+				<span class="date"><%= eval { $post->{date}->day .' de ' . $post->{date}->month_name .' de '. $post->{date}->year }%></span>
+				<a href="<%= $post->{url} %>" class="pull-right">Continuar lendo...</a>
+			</div>
+		</div>
+	</div>
+</div>

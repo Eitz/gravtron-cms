@@ -1,11 +1,11 @@
-% layout 'default';
-% title $info->{title};
+% layout 'cms';
+% title $post->{title};
 % content_for header => begin
-    <meta name="Description" content="<%= $info->{subtitle}. ' - ' . $info->{intro} %>" />
-	<meta property="og:image" content="http://gravidade.org/img/posts/<%= $info->{image} %>"/>
+    <meta name="Description" content="<%= $post->{subtitle}. ' - ' . $post->{intro} %>" />
+	<meta property="og:image" content="http://gravidade.org/img/posts/<%= $post->{image} %>"/>
 % end
 <div class="post-header">
-	<div class="image" style="background-image: url('/img/posts/<%= $info->{image} %>')"></div>
+	<div class="image" style="background-image: url('/img/posts/<%= $post->{image} %>')"></div>
 </div>
 <div class="container">
 	<div class="row">
@@ -22,16 +22,16 @@
 		</div>
 		<div class="col-lg-7 col-md-8 col-md-offset-1 post-body">
 			<h1 class="post-title">
-				<%= $info->{title} %>
+				<%= $post->{title} %>
 			</h1>
 			<p class="post-date">
-				<%= $info->{date}->day %> de <%= $info->{date}->month_name %> de <%= $info->{date}->year %>
+				<%= $post->{date}->day %> de <%= $post->{date}->month_name %> de <%= $post->{date}->year %>
 			</p>
 			<div class="post-content">
 				<h2 class="post-subtitle">
-					<%= $info->{subtitle} %>
+					<%= $post->{subtitle} %>
 				</h2>
-				<%== $body %>
+				<%== $post->{body} %>
 				<hr>
 				<div id="disqus_thread"></div>
 			</div>

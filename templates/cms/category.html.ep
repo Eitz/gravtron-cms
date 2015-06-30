@@ -1,4 +1,4 @@
-% layout 'default';
+% layout 'cms';
 <div class="container">
 	<h2 class="category-title"> Categoria: <strong><%= $categoria %></strong></h2>
  % for my $post (@$posts) {
