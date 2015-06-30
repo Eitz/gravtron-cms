@@ -1,4 +1,9 @@
 % layout 'default';
+% title $info->{title};
+% content_for header => begin
+    <meta name="Description" content="<%= $info->{subtitle}. ' - ' . $info->{intro} %>" />
+	<meta property="og:image" content="http://gravidade.org/img/posts/<%= $info->{image} %>"/>
+% end
 <div class="post-header">
 	<div class="image" style="background-image: url('/img/posts/<%= $info->{image} %>')"></div>
 </div>
@@ -12,7 +17,7 @@
 				<h4>Richard Eitz</h4>
 				<h5>21, programmer</h5>
 				<img src="https://pt.gravatar.com/userimage/57856814/0c1d76e92be3d6237d4e03337eee66a3.jpg?size=200" />
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+				<p>Desenvolvedor dedicado, orgulho da família.</p>
 			</div>
 		</div>
 		<div class="col-lg-7 col-md-8 col-md-offset-1 post-body">
