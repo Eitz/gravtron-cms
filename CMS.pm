@@ -26,6 +26,8 @@ sub register {
 						 'placeholders will overwrite anything after "/". '.
 						 'Suggestion: Load the plugin after everything.');	
 	}
+
+	$r = $r->under($prefix);
 	$r->get("/" => sub { _index(shift, $self) } );
 	$r->get("/:categoria/" => sub { _category(shift, $self)});
 	$r->get("/:categoria/:post" => sub { _post(shift, $self)});
