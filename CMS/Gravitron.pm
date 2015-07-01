@@ -16,7 +16,7 @@ sub register {
 	$self->config($config);
 	
 	my $prefix = $self->config->{prefix};
-	my $home = $self->config->{post_home};
+	my $home = $self->config->{cms_home};
 
 	# static serve
 	push @{$app->static->paths}, "$home/assets";
@@ -65,25 +65,23 @@ sub _config {
 
 	$config = eval { eval "$config" };
 
-	if ($config && defined $config->{post_home} && defined $config->{prefix}){
+	if ($config && defined $config->{prefix}){
 		
-		$config->{post_home} = "$root/$config->{post_home}";
-		$config->{post_home} =~ s|\/\/|\/|g;
-
 		$config->{prefix} = "$config->{prefix}";
 		$config->{prefix} =~ s|\/\/|\/|g;
 
 	} else {
 		$app->log->error("Problem loading config file('cms.config'): ".
 						 "It has to be in the same folder as CMS.pm ".
-						 "and it must have 'post_home' and 'prefix'.");
+						 "and it must have 'prefix'.");
 		$config = {
-			prefix => '/blog',
-			post_home => "$root/posts"
+			prefix => '/blog'
 		};
 	}
 
-	$app->log->debug("CMS: Posts folder is: $config->{post_home}");
+	$config->{cms_home} = "$root";
+
+	$app->log->debug("CMS: Posts folder is: $config->{cms_home}/posts");
 	$app->log->debug("CMS: Prefix for cms pages is: " . ($config->{prefix}?$config->{prefix}:'/'));
 
 	return $config;
@@ -112,8 +110,7 @@ sub _index {
 	my @posts_sorted = sort{ $b->{date} cmp $a->{date} } @posts;
 
 	$c->stash(posts => \@posts_sorted);
-	say @{$c->app->renderer->paths};
-	return $c->render('cms_index.html.ep');
+	return $c->render( template => 'cms_index');
 }
 
 sub _category {
@@ -159,7 +156,7 @@ sub _post {
 sub _find_categories {
     my ($self) = @_;
 
-    my $home = $self->config->{post_home};
+    my $home = $self->config->{cms_home} . '/posts';
 
     opendir(my $dh, $home) or return undef;
     my @dirs = grep { -d "$home/$_" && !/\..?/ && !/assets/ } readdir($dh);
@@ -170,7 +167,7 @@ sub _find_categories {
 sub _find_posts {
     my ($self, $categoria) = @_;
 
-    my $home = $self->config->{post_home};
+    my $home = $self->config->{cms_home} . '/posts';
     
     my $dir = "$home/$categoria";
 
@@ -185,7 +182,7 @@ sub _find_posts {
 sub _read_post {
 	my ($self, $categoria, $post_slug, $extra) = @_;
 
-	my $home = $self->config->{post_home};
+	my $home = $self->config->{cms_home} . '/posts';
 	my $prefix = $self->config->{prefix};
 
 	my $filename = "$home/$categoria/$post_slug.post";
