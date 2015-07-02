@@ -15,7 +15,7 @@ image => sombrero.jpg
 
 <h3>Curiosidades</h3>
 
-<p>Esta galáxia é do tipo <a href="/img/assets/galaxy-classification.gif" target="_blank">Sa-Sb</a></strong>, contando com um grande e luminoso núcleo, podendo ser visto em fotografias de curta exposição, porém possuindo também espirais bem definidas.</p>
+<p>Esta galáxia é do tipo <a href="/cms/galaxy-classification.gif" target="_blank">Sa-Sb</a></strong>, contando com um grande e luminoso núcleo, podendo ser visto em fotografias de curta exposição, porém possuindo também espirais bem definidas.</p>
 
 <p>Recentes fotográfias de campo ultra-profundo do Observatório Anglo-Australiano mostraram que esta galáxia possui um gigantestesca auréola.</p>
 
@@ -25,28 +25,28 @@ image => sombrero.jpg
 
 <h3>Outras imagens para deleite (Sombrero Galaxy)</h3>
 <div class="image">
-	<a href="/img/assets/sombrero-1.jpg">
-		<img src="/img/assets/sombrero-1.jpg"/>
+	<a href="/cms/sombrero-1.jpg">
+		<img src="/cms/sombrero-1.jpg"/>
 	 </a>
  	<p class="legend">Que beleza, né?.</p>
 </div>
 <div class="image">
-	<a href="/img/assets/sombrero-3.jpg" target="_blank">
-		<img src="/img/assets/sombrero-3.jpg" />
+	<a href="/cms/sombrero-3.jpg" target="_blank">
+		<img src="/cms/sombrero-3.jpg" />
 	</a>
  	<p class="legend">Em preto e branco.</p>
 </div>
 
 <div class="image">
-	<a href="/img/assets/sombrero-2.jpg">
-		<img src="/img/assets/sombrero-2.jpg" />
+	<a href="/cms/sombrero-2.jpg">
+		<img src="/cms/sombrero-2.jpg" />
 	</a>
 	<p class="legend">Detalhe da espessa camada de poeira.</p>
 </div>
 
 <div class="image">
-	<a href="/img/assets/sombrero-halo.jpg">
-		<img src="/img/assets/sombrero-halo.jpg" />
+	<a href="/cms/sombrero-halo.jpg">
+		<img src="/cms/sombrero-halo.jpg" />
 	</a>
 	<p class="legend">A auréola que envolve a galáxia.</p>
 </div>
