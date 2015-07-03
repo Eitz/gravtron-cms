@@ -1,4 +1,4 @@
-% layout 'gravitron';
+% layout 'gravtron';
 % content_for header => begin
 	<meta property="og:image" content="http://gravidade.org/img/mini-logo.png"/>
 % end

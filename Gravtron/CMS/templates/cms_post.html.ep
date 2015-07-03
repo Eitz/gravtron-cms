@@ -1,4 +1,4 @@
-% layout 'gravitron';
+% layout 'gravtron';
 % title $post->{title};
 % content_for header => begin
     <meta name="Description" content="<%= $post->{subtitle}. ' - ' . $post->{intro} %>" />

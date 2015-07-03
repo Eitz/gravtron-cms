@@ -1,4 +1,4 @@
-package Graviton::CMS::Helpers;
+package Gravtron::CMS::Helpers;
 use Mojo::Base -base;
 
 has 'persistence';

@@ -1,4 +1,4 @@
-package Graviton::CMS::CMSController;
+package Gravtron::CMS::CMSController;
 use Mojo::Base 'Mojolicious::Controller';
 
 sub index {

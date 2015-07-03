@@ -51,7 +51,7 @@ get '/sitemap' => [format => qw/txt/] => sub {
 	return $c->render(text => $text);
 };
 
-plugin 'Graviton::CMS';
+plugin 'Gravtron::CMS';
 
 app->config(
 	hypnotoad => {listen => ['http://*:3000']},

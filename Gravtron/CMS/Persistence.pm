@@ -1,4 +1,4 @@
-package Graviton::CMS::Persistence;
+package Gravtron::CMS::Persistence;
 use Mojo::Base -base;
 
 has 'context';
@@ -6,10 +6,10 @@ has 'context';
 sub find_categories {
     my ($self) = @_;
 
-    my $home = $self->context->config->{cms_home} . '/posts';
+    my $home = $self->context->config->{cms}->{home} . '/posts';
 
     opendir(my $dh, $home) or return undef;
-    my @dirs = grep { -d "$home/$_" && !/\..?/ && !/assets/ } readdir($dh);
+    my @dirs = grep { -d "$home/$_" && !/\..?/ } readdir($dh);
     closedir($dh);
     return @dirs;
 }
@@ -17,7 +17,7 @@ sub find_categories {
 sub find_posts {
     my ($self, $categoria) = @_;
 
-    my $home = $self->context->config->{cms_home} . '/posts';
+    my $home = $self->context->config->{cms}->{home} . '/posts';
     
     my $dir = "$home/$categoria";
 
@@ -32,13 +32,11 @@ sub find_posts {
 sub read_post {
 	my ($self, $categoria, $post_slug, $extra) = @_;
 
-	my $home = $self->context->config->{cms_home} . '/posts';
-	my $prefix = $self->context->config->{prefix};
+	my $home = $self->context->config->{cms}->{home} . '/posts';
+	my $prefix = $self->context->config->{cms}->{prefix};
 
 	my $filename = "$home/$categoria/$post_slug.post";
 	my $file = $self->open_file($filename);
-
-	say Dumper $filename;
 
 	unless ($file) {
 		return undef, undef;
