@@ -20,7 +20,9 @@ sub set_helper{
 sub config {
 	my $self = shift;
 
-	$self->configurer( Gravtron::Config->new(gravtron => $self) );
+	unless ($self->configurer){
+		$self->configurer( Gravtron::Config->new(gravtron => $self) );
+	}
 	$self->configurer->definitions;
 }
 

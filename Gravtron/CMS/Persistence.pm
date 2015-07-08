@@ -1,12 +1,12 @@
 package Gravtron::CMS::Persistence;
 use Mojo::Base -base;
 
-has 'context';
+has 'gravtron';
 
 sub find_categories {
     my ($self) = @_;
 
-    my $home = $self->context->config->{cms}->{home} . '/posts';
+    my $home = $self->gravtron->config->{cms}->{home} . '/posts';
 
     opendir(my $dh, $home) or return undef;
     my @dirs = grep { -d "$home/$_" && !/\..?/ } readdir($dh);
@@ -17,7 +17,7 @@ sub find_categories {
 sub find_posts {
     my ($self, $categoria) = @_;
 
-    my $home = $self->context->config->{cms}->{home} . '/posts';
+    my $home = $self->gravtron->config->{cms}->{home} . '/posts';
     
     my $dir = "$home/$categoria";
 
@@ -32,8 +32,8 @@ sub find_posts {
 sub read_post {
 	my ($self, $categoria, $post_slug, $extra) = @_;
 
-	my $home = $self->context->config->{cms}->{home} . '/posts';
-	my $prefix = $self->context->config->{cms}->{prefix};
+	my $home = $self->gravtron->config->{cms}->{home} . '/posts';
+	my $prefix = $self->gravtron->config->{cms}->{prefix};
 
 	my $filename = "$home/$categoria/$post_slug.post";
 	my $file = $self->open_file($filename);

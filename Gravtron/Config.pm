@@ -32,11 +32,11 @@ sub prepare_config {
 
 	$config = eval { eval "$config" };
 
-	if (!$config || !$config->isa('HASH') ) {
+	if (!$config || (ref $config ne 'HASH') ) {
 		
-		if ($self->gravtron->app)
-			$self->gravtron->app->log->error("Problem loading config file('gravtron.config')").
-
+		if ($self->gravtron->app){
+			$self->gravtron->app->log->error("Problem loading config file('gravtron.config')");
+		}
 		$config = {};
 	}
 

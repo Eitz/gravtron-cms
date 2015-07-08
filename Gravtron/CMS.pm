@@ -8,7 +8,6 @@ use Gravtron::Gravtron;
 
 use Gravtron::Config;
 use Gravtron::CMS::Helpers;
-use Gravtron::CMS::Controller;
 use Gravtron::CMS::Persistence;
 
 has 'gravtron';
@@ -24,10 +23,10 @@ sub register {
 		$self->gravtron($G);
 	}
 
-	push @{$self->gravtron->plugins_loaded}, 'Gravtron::CMS';
+	push @{$self->gravtron->loaded_plugins}, 'Gravtron::CMS';
 
 	# start persistence
-	my $persistence = Gravtron::CMS::Persistence->new(context => $self);
+	my $persistence = Gravtron::CMS::Persistence->new(gravtron => $self->gravtron);
 
 	# prepare helpers
 	my $helpers = Gravtron::CMS::Helpers->new(persistence => $persistence);
@@ -42,8 +41,8 @@ sub register {
 		$self->gravtron->config->{cms}->{home} = $self->gravtron->config->{home}.'/CMS';
 	}
 	
-	my $prefix = $self->config->{cms}->{prefix};
-	my $home = $self->config->{home};
+	my $prefix = $self->gravtron->config->{cms}->{prefix};
+	my $home = $self->gravtron->config->{cms}->{home};
 
 	# static serve
 	push @{$app->static->paths}, "$home/assets";
